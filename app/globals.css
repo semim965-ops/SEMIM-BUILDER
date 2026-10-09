@@ -1,0 +1,116 @@
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #f3f5f9;
+  color: #172033;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 28px 20px;
+}
+
+.topbar, .summary-strip, .total-row, .grand-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar { margin-bottom: 26px; }
+h1 { margin: 4px 0; font-size: 30px; }
+h2 { font-size: 20px; margin-top: 0; }
+.eyebrow { color: #1769aa; font-size: 12px; font-weight: bold; }
+.muted { color: #687386; font-size: 14px; line-height: 1.6; }
+
+.panel {
+  background: white;
+  padding: 24px;
+  margin-bottom: 20px;
+  border: 1px solid #e1e6ef;
+  border-radius: 12px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+label { display: grid; gap: 8px; font-size: 14px; font-weight: 600; }
+
+input {
+  width: 100%;
+  min-width: 75px;
+  padding: 10px;
+  border: 1px solid #cbd3df;
+  border-radius: 6px;
+  background: white;
+  color: #172033;
+  font: inherit;
+}
+
+button {
+  padding: 11px 16px;
+  background: #145ba8;
+  color: white;
+  border: 0;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.summary-strip {
+  margin-top: 20px;
+  padding: 16px;
+  background: #eef5ff;
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.table-wrap { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px 9px;
+  border-bottom: 1px solid #e5e9f0;
+}
+
+th { background: #f6f8fb; }
+td input { min-width: 90px; }
+.total-row { padding: 12px 0; }
+.grand-total {
+  margin-top: 12px;
+  padding: 18px;
+  background: #eaf3ff;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+footer { padding: 20px 0; color: #687386; font-size: 13px; }
+
+@media (max-width: 650px) {
+  .page { padding: 16px 10px; }
+  .panel { padding: 16px 12px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .topbar { align-items: flex-start; }
+  h1 { font-size: 23px; }
+}
+
+@media print {
+  body { background: white; }
+  .page { max-width: none; padding: 0; }
+  .panel { break-inside: avoid; }
+  button { display: none; }
+  input { border: 0; padding: 2px; }
+}
